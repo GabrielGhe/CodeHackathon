@@ -39,7 +39,7 @@ $(document).ready(function(){
 
   };
 
-  make_marker(45.3, -73.34);
+  //make_marker(45.3, -73.34);
 
 // this function will output a marker for the city directly on the map
   function codeAddress(city) {
@@ -57,5 +57,5 @@ $(document).ready(function(){
     });
   }
 
-   codeAddress('Vancouver');
+   codeAddress('London, Ontario');
 });

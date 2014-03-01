@@ -13,6 +13,11 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ9CBx4r3OZg3-zLVnpN_OgsCV09F7x7k&sensor=false"
   type="text/javascript"></script>
+  <script rel='text/javascript' src="/lib/js/Chart.js"></script>
+  <style>
+      canvas{
+      }
+    </style>
 <!--   // <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> -->
 
 <!-- https://developers.google.com/maps/documentation/javascript/tutorial#HTML5 -->
@@ -20,38 +25,47 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Welcome to <%= title %>! Look at the awesome map and the awesome chart!</p>
+
 
     <!-- Docs -->
-    <table>
-	<% for(var i=0; i < all.length; i++) {%>
-	   <tr>
-	   	
-	   	<td>
-	   		<!-- Year -->
-	   		<%= all[i].YEAR %>
-	   	</td>
-	   	
-	   	<td>
-	   		<!-- Name -->
-	   		<%= all[i].NAME %>
-	   	</td>
 
-	   	<td>
-	   		<!-- CAT1 -->
-	   		<%= all[i].CAT1 %>
-	   	</td>
-	   	
-	   </tr>
-	<% } %>
-	</table>
 	<!-- End Docs -->
-
-    <p>Map:</p>
 <!--     <div id="panel">
       <input id="address" type="textbox" value="Sydney, NSW">
       <input type="button" value="Geocode" onclick="codeAddress();">
     </div> -->
+    <table> 
+      <tr>
+        <td>
     <div id="map-canvas" style="width: 500px; height: 500px"></div>
+    </td>
+    <td>
+      <canvas id="canvas" width="500" height="500"></canvas>
+
+      <script>
+
+    var barChartData = {
+      labels : ["Cats","Dogs","Catdogs"],
+      datasets : [
+        {
+          fillColor : "rgba(220,220,220,0.5)",
+          strokeColor : "rgba(220,220,220,1)",
+          data : [65,59,90]
+        },
+        {
+          fillColor : "rgba(151,187,205,0.5)",
+          strokeColor : "rgba(151,187,205,1)",
+          data : [28,48,40]
+        }
+      ]
+
+    }
+
+  var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartData);
+
+  </script>
+    </td>
+  </tr>
   </body>
 </html>
