@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "connect-mongo": "~0.4.0",
+    "csvtojson": "*",
     "ejs": "*",
     "express": "3.4.8",
     "mongoose": "~3.8.7"
