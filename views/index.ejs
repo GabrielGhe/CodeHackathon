@@ -2,10 +2,30 @@
 <html>
   <head>
     <title><%= title %></title>
+
+
+  	<script rel='text/javascript' 
+  	src='/lib/js/jquery.js'> 
+  	</script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script rel='text/javascript' 
+    src='/javascripts/functions.js'>
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ9CBx4r3OZg3-zLVnpN_OgsCV09F7x7k&sensor=false"
+  type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<!-- https://developers.google.com/maps/documentation/javascript/tutorial#HTML5 -->
+
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <p>Map:</p>
+<!--     <div id="panel">
+      <input id="address" type="textbox" value="Sydney, NSW">
+      <input type="button" value="Geocode" onclick="codeAddress()">
+    </div> -->
+    <div id="map-canvas" style="width: 500px; height: 500px"></div>
   </body>
 </html>
