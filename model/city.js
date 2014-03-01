@@ -42,5 +42,19 @@ citySchema.statics.getCityNames = function(res, City){
 	});
 }
 
+citySchema.statics.getCityByName = function(res){
+	//http://stackoverflow.com/questions/5373987/how-to-use-jquery-ajax-calls-with-node-js
+	var x = {
+		YEAR : Number, 
+		NAME : String,
+		CAT1 : String,
+		CAT2 : String
+	};
+	res.writeHead(200, {"Content-Type": "application/json"});
+	console.log("Inside City model returning");
+	console.log(x);
+	res.end(JSON.stringify(x));
+}
+
 module.exports = mongoose.model('City', citySchema, "City");
 

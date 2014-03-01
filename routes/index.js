@@ -51,3 +51,12 @@ exports.index = function(req, res){
 	//render
 };
 
+
+exports.getname = function(req, res){
+	console.log("Got to getname");
+	var name = req.params.name;
+	City.getCityByName(res);
+}
+
+
+
