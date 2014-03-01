@@ -2,13 +2,16 @@
 <html>
   <head>
     <title><%= title %></title>
-  	<script rel='text/javascript' 
-  	src='/lib/js/jquery.js'> 
-  	</script>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script rel='text/javascript' 
-    src='/javascripts/functions.js'>
+    <script> var nameArr = [];
+        <% for(var i = 0; i < names.length; i++){ %>
+          nameArr.push("<%= names[i] %>");
+        <% } %>
     </script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/lib/css/ui-lightness/jquery-ui-1.10.4.custom.min.css' />
+  	<script rel='text/javascript' src='/lib/js/jquery.js'></script>
+    <script rel='text/javascript' src='/lib/js/jquery-ui.min.js'></script>
+    <script rel='text/javascript' src='/javascripts/functions.js'></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ9CBx4r3OZg3-zLVnpN_OgsCV09F7x7k&sensor=false"
   type="text/javascript"></script>
     <script rel='text/javascript' src="/lib/js/Chart.js"></script>
@@ -55,13 +58,8 @@
   </tr>
 </table>
 
-    <ul>
-      <% for(var i=0; i<names.length; i++) {%>
-         <li><%= names[i] %></li>
-      <% } %>
-    </ul>
           <div id="panel">
-            <input id="address" type="textbox" value="Montreal">
+            <input id="namesInput" type="textbox" value="Montreal">
             <input type="button" value="Search" onclick="codeAddress2();">
           </div>
           <div id="map-canvas" style="width: 500px; height: 500px"></div>

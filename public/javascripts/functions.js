@@ -21,7 +21,7 @@
 
  // same as function above but takes user input from textbox
   function codeAddress2() {
-      var address = document.getElementById('address').value;
+      var address = document.getElementById('namesInput').value;
       geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           map.setCenter(results[0].geometry.location);
@@ -67,6 +67,8 @@ $(document).ready(function(){
 
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
+
+    setUpAutoComplete(); // setting up autocomplete
   }
 
   function loadScript() {
@@ -77,10 +79,6 @@ $(document).ready(function(){
     document.body.appendChild(script);
   }
 
-  function tester() {
-    console.log("worked");
-
-  }
 
   initialize();
 
@@ -92,6 +90,12 @@ $(document).ready(function(){
     });
 
   };
+
+  function setUpAutoComplete(){
+    $("#namesInput").autocomplete({
+      source: nameArr
+    });
+  }
 
   //make_marker(45.3, -73.34);
 
