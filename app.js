@@ -5,12 +5,12 @@
 
 var express = require('express');
 var MongoStore = require('connect-mongo')(express);
+var mongoose = require('mongoose');
 var routes = require('./routes');
 var user = require('./routes/user');
+var City = require('./model/city');
 var http = require('http');
 var path = require('path');
-var mongoose = require('mongoose');
-
 
 /**
  * Mongoose connecting
