@@ -2,8 +2,6 @@
 <html>
   <head>
     <title><%= title %></title>
-
-
   	<script rel='text/javascript' 
   	src='/lib/js/jquery.js'> 
   	</script>
@@ -13,28 +11,16 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ9CBx4r3OZg3-zLVnpN_OgsCV09F7x7k&sensor=false"
   type="text/javascript"></script>
-  <script rel='text/javascript' src="/lib/js/Chart.js"></script>
-  <style>
+    <script rel='text/javascript' src="/lib/js/Chart.js"></script>
+    <style>
       canvas{
       }
     </style>
-<!--   // <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> -->
-
 <!-- https://developers.google.com/maps/documentation/javascript/tutorial#HTML5 -->
-
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %>! Look at the awesome map and the awesome chart!</p>
-
-
-    <!-- Docs -->
-
-	<!-- End Docs -->
-<!--     <div id="panel">
-      <input id="address" type="textbox" value="Sydney, NSW">
-      <input type="button" value="Geocode" onclick="codeAddress();">
-    </div> -->
     <table> 
       <tr>
         <td>
@@ -74,5 +60,19 @@
          <li><%= names[i] %></li>
       <% } %>
     </ul>
+          <div id="panel">
+            <input id="address" type="textbox" value="Montreal">
+            <input type="button" value="Search" onclick="codeAddress2();">
+          </div>
+          <div id="map-canvas" style="width: 500px; height: 500px"></div>
+        </td>
+        <td>
+            <div id="panel">
+              <input type="button" value="Generate Graph" onclick ="make_graph();">
+            </div>
+             <canvas id="canvas" width="500" height="500"></canvas>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
