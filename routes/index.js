@@ -27,30 +27,38 @@ exports.index = function(req, res){
 	});
 	*/
 
-	
-	// for(var i = 0; i < rent.length; i++){
-	// 	var obj = {
-	// 		YEAR : rent[i].Ref_Date, 
-	// 		NAME : rent[i].GEO,
-	// 		CAT1 : rent[i].UNIT,
-	// 		CAT2 : rent[i].VALUE
-	// 	};
-	// 	console.log(obj);
-	// 	City.saveSingle(obj, function(err, doc){
-	// 		if(err)
-	// 			console.log("Did not save");
-	// 	    else {
-	// 			console.log("Saved " + doc._id);
-	// 	    }
-	// 	});
-	// 	console.log("");
-	// 	console.log("");
-	// }
-	
-	
+	/*
+	for(var i = 0; i < rent.length; i++){
+		var obj = {
+			YEAR : rent[i].Ref_Date, 
+			NAME : rent[i].GEO,
+			CAT1 : rent[i].UNIT,
+			CAT2 : rent[i].VALUE
+		};
+		console.log(obj);
+		City.saveSingle(obj, function(err, doc){
+			if(err)
+				console.log("Did not save");
+		    else {
+				console.log("Saved " + doc._id);
+		    }
+		});
+		console.log("");
+		console.log("");
+	}
+	*/
+	City.find(
+            {},
+            function(err, docs) {
+            if (!err){ 
+               res.render('index', {
+					title: 'Awesome App',
+					all: docs
+				});
+            } else { 
+            	throw err;
+            }
+        });
 	//render
-	res.render('index', {
-		title: 'Awesome App'
-	});
 };
 

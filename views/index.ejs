@@ -21,6 +21,32 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <!-- Docs -->
+    <table>
+	<% for(var i=0; i < all.length; i++) {%>
+	   <tr>
+	   	
+	   	<td>
+	   		<!-- Year -->
+	   		<%= all[i].YEAR %>
+	   	</td>
+	   	
+	   	<td>
+	   		<!-- Name -->
+	   		<%= all[i].NAME %>
+	   	</td>
+
+	   	<td>
+	   		<!-- CAT1 -->
+	   		<%= all[i].CAT1 %>
+	   	</td>
+	   	
+	   </tr>
+	<% } %>
+	</table>
+	<!-- End Docs -->
+
     <p>Map:</p>
 <!--     <div id="panel">
       <input id="address" type="textbox" value="Sydney, NSW">
