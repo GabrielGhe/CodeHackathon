@@ -1,14 +1,17 @@
 var mongoose = require('mongoose');
 
 var citySchema = new mongoose.Schema({
+	YEAR : Number, 
 	NAME : String,
 	CAT1 : String,
 	CAT2 : String
 });
 
-citySchema.statics.enterAll = function(){
-	console.log("enterAll works!");
+citySchema.statics.saveSingle = function(obj, cb){
+	console.log(obj);
+	var file = new this(obj).save(cb);
+	console.log("Entry added to Database");
 }
 
-module.exports = mongoose.model('City', citySchema);
+module.exports = mongoose.model('City', citySchema, "City");
 
