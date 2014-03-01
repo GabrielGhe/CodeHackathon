@@ -95,5 +95,5 @@ $(document).ready(function(){
 
   //make_marker(45.3, -73.34);
 
-   codeAddress('London, Ontario');
+   //codeAddress('London, Ontario');
 });
