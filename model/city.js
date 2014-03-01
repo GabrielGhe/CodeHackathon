@@ -28,5 +28,19 @@ citySchema.statics.getAll = function(res){
     });
 }
 
+citySchema.statics.getCityNames = function(res, City){
+	City.find().distinct('NAME', function(err, nameArr) {
+    	if (!err){ 
+			console.log(nameArr);
+			res.render('index', {
+				title: 'Awesome App',
+				names: nameArr
+			});
+        } else { 
+        	throw err;
+        }
+	});
+}
+
 module.exports = mongoose.model('City', citySchema, "City");
 
