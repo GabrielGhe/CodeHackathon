@@ -13,5 +13,20 @@ citySchema.statics.saveSingle = function(obj, cb){
 	console.log("Entry added to Database");
 }
 
+citySchema.statics.getAll = function(res){
+	City.find(
+        {},
+        function(err, docs) {
+        if (!err){ 
+           res.render('index', {
+				title: 'Awesome App',
+				all: docs
+			});
+        } else { 
+        	throw err;
+        }
+    });
+}
+
 module.exports = mongoose.model('City', citySchema, "City");
 
