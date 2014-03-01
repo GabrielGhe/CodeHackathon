@@ -47,18 +47,7 @@ exports.index = function(req, res){
 		console.log("");
 	}
 	*/
-	City.find(
-            {},
-            function(err, docs) {
-            if (!err){ 
-               res.render('index', {
-					title: 'Awesome App',
-					all: docs
-				});
-            } else { 
-            	throw err;
-            }
-        });
+	City.getCityNames(res, City);
 	//render
 };
 
