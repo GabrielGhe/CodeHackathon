@@ -45,10 +45,10 @@ citySchema.statics.getCityNames = function(res, City){
 citySchema.statics.getCityByName = function(res){
 	//http://stackoverflow.com/questions/5373987/how-to-use-jquery-ajax-calls-with-node-js
 	var x = {
-		YEAR : Number, 
-		NAME : String,
-		CAT1 : String,
-		CAT2 : String
+		YEAR : 1234, 
+		NAME : "such",
+		CAT1 : "doge",
+		CAT2 : "wow"
 	};
 	res.writeHead(200, {"Content-Type": "application/json"});
 	console.log("Inside City model returning");
