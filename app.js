@@ -4,10 +4,20 @@
  */
 
 var express = require('express');
+var MongoStore = require('connect-mongo')(express);
 var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var mongoose = require('mongoose');
+
+/**
+ * Mongoose connecting
+ */
+mongoose.connect("localhost");
+mongoose.connection.on('error', function() {
+  console.error('✗ MongoDB Connection Error. Please make sure MongoDB is running.');
+});
 
 var app = express();
 
